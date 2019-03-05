@@ -1,0 +1,164 @@
+<app-header></app-header>
+
+<div id="wrapper">
+
+  <div id="content-wrapper">
+
+    <div class="container-fluid">
+
+      <!-- Breadcrumbs-->
+      <app-caminho [caminhos] = "service.caminhoList()"></app-caminho>
+
+      <h3>Listar usuários</h3>
+
+      <!-- Icon Cards-->
+      <div class="card mb-4">
+        <div class="card-header lg-1">
+          <fa-icon [icon]="faList"></fa-icon>
+          Filtros
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <div class="form-row">
+              <div class="col-12">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faUser"></fa-icon>
+                    </span>
+                  </div>
+                  <input ngModel name="nome" class="form-control" placeholder="Nome Completo" type="text">
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-6">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faFile"></fa-icon>
+                    </span>
+                  </div>
+                  <input ngModel name="documento" class="form-control" placeholder="Documento" type="number">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faCalendar"></fa-icon>
+                    </span>
+                  </div>
+                  <input ngModel name="dataCadastro" class="form-control" placeholder="Data Cadastro" type="date">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="col-6">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faAt"></fa-icon>
+                    </span>
+                  </div>
+                  <input ngModel name="email" class="form-control" placeholder="Email" type="email">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faPhone"></fa-icon>
+                    </span>
+                  </div>
+                  <input ngModel name="telefone" class="form-control" placeholder="Telefone" type="tel">
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-6">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faCheck"></fa-icon>
+                    </span>
+                  </div>
+                  <select class="selectpicker">
+                    <option value="" selected>Aitvo ou Inativo</option>
+                    <option>Ativo</option>
+                    <option>Inativo</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-2">
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    <fa-icon [icon]="faSearch"></fa-icon>
+                    <span>
+                      Pesquisar
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div class="col-2 offset-8">
+                <div class="form-group">
+                  <button (click)="onAdicionar()" class="btn btn-primary btn-block">
+                    <fa-icon [icon]="faPlus"></fa-icon>
+                    <span>
+                        Adicionar
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="card mb-4">
+        <div class="card-header lg-1">
+          <fa-icon [icon]="faTable"></fa-icon>
+          Usuários
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Documento</th>
+                  <th>Email</th>
+                  <th>Telefone</th>
+                  <th>Login</th>
+                  <th>Ativo</th>
+                  <th>Data Cadastro</th>
+                  <th> Ações</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hilton Wichwski Silva</td>
+                  <td>0000000000</td>
+                  <td>hws689@gmail.com</td>
+                  <td>48996614394</td>
+                  <td>hilton.silva</td>
+                  <td class="text-center" (click)="toggleAtivo()" style="cursor:pointer">
+                    <fa-icon [icon]="iconeAtivo()"></fa-icon>
+                  </td>
+                  <td>07/07/7777</td>
+                  <td class="text-center">
+                    <a class='btn btn-info btn-xs mx-2' href="#">
+                      <fa-icon [icon]="faEdit"></fa-icon>
+                    </a>
+                    <a href="#" class="btn btn-danger btn-xs mx-2">
+                      <fa-icon [icon]="faTrash"></fa-icon>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>

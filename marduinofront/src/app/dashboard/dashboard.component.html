@@ -1,0 +1,88 @@
+<app-header></app-header>
+    <div id="wrapper">
+  
+      <div id="content-wrapper">
+  
+        <div class="container-fluid">
+    
+          <!-- Icon Cards-->
+          <div class="row">
+            <div class="col-xl-4 col-sm-6 mb-4">
+              <div class="card lg yellow o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                    <fa-icon [icon]="faUsersCog"></fa-icon>
+                  </div>
+                  <div class="mr-5">
+                    Gerenciar Usuário
+                  </div>
+                  <div class="mr-4">
+                    <!-- <fa-icon [icon]="faUser"></fa-icon> -->
+                  </div>
+                </div>
+                <a class="card-footer lg-1 yellow clearfix small z-1" [href]="'gerenciar-usuario'">
+                  <span class="float-left">
+                    Acessar
+                  </span>
+                  <span class="float-right">
+                    <fa-icon [icon]="faAngleRight"></fa-icon>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-4 col-sm-6 mb-4">
+              <div class="card lg yellow o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                      <fa-icon [icon]="faFileAlt"></fa-icon>
+                  </div>
+                  <div class="mr-5">Eventos</div>
+                </div>
+                <a class="card-footer lg-1 yellow clearfix small z-1" href="#">
+                  <span class="float-left">Acessar</span>
+                  <span class="float-right">
+                    <fa-icon [icon]="faAngleRight"></fa-icon>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-4 col-sm-6 mb-4">
+              <div class="card lg blue o-hidden h-100">
+                <div class="card-body">
+                  <div class="card-body-icon">
+                      <fa-icon [icon]="faExclamationCircle"></fa-icon>
+                  </div>
+                  <div class="mr-5">Você têm <strong>12</strong> notificações!</div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- DataTables Example -->
+          <div class="card mb-4">
+            <div class="card-header lg-1">
+              <fa-icon [icon]="faTable"></fa-icon>
+              Notificações
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th class="lg-2">Evento</th>
+                      <th class="lg-2">Valor</th>
+                      <th class="lg-2">Nível</th>
+                      <th class="lg-2">Data</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Queda de energia</td>
+                      <td>100</td>
+                      <td>Alto</td>
+                      <td>29/02/2019</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div> 
+    </div>

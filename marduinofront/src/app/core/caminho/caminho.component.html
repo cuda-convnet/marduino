@@ -1,0 +1,14 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a [href]="'dashboard'" style="color: #0287D0">Painel de controle</a>
+  </li>
+  <li *ngFor="let item of caminhos ; let last = last" class="breadcrumb-item " [ngClass]="{'active': last}">
+    <span *ngIf="!last">
+      <a [href]="item.rota">{{item.descricao}}</a>
+    </span>
+    <span *ngIf="last">
+      {{item.descricao}}
+    </span>
+  </li>
+</ol>

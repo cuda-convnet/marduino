@@ -1,0 +1,188 @@
+<app-header></app-header>
+
+<div id="wrapper">
+
+  <div id="content-wrapper">
+
+    <div class="container-fluid">
+
+      <!-- Breadcrumbs-->
+      <app-caminho [caminhos]="service.caminhoCad()"></app-caminho>
+
+      <h3>Cadastrar usuários</h3>
+
+      <!-- Icon Cards-->
+      <div class="card mb-4">
+        <div class="card-header lg-1">
+          <fa-icon [icon]="faList"></fa-icon>
+          Dados
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <div class="form-row">
+              <div class="col-8">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faUser"></fa-icon>
+                    </span>
+                  </div>
+                  <input ngModel name="nome" class="form-control" placeholder="Nome Completo" type="text">
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faUser"></fa-icon>
+                    </span>
+                  </div>
+                  <input ngModel name="nome" class="form-control" placeholder="Login" type="text">
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-6">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faKey"></fa-icon>
+                    </span>
+                  </div>
+                  <input ngModel name="documento" class="form-control" placeholder="Senha" type="password">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faKey"></fa-icon>
+                    </span>
+                  </div>
+                  <input ngModel name="email" class="form-control" placeholder="Confirmar senha" type="password">
+                </div>
+              </div>
+            </div>
+            <div></div>
+            <div class="form-row">
+              <div class="col-6">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faFile"></fa-icon>
+                    </span>
+                  </div>
+                  <input ngModel name="documento" class="form-control" placeholder="Documento" type="number">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faAt"></fa-icon>
+                    </span>
+                  </div>
+                  <input ngModel name="email" class="form-control" placeholder="Email" type="email">
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-6">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faPhone"></fa-icon>
+                    </span>
+                  </div>
+                  <input ngModel name="telefone" class="form-control" placeholder="Telefone" type="tel">
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <fa-icon [icon]="faCheck"></fa-icon>
+                    </span>
+                  </div>
+                  <select ngModel name="ativo" class="selectpicker col select">
+                    <option value="1" selected>Ativo</option>
+                    <option value="0">Inativo</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card-header lg-1">
+                <fa-icon [icon]="faList"></fa-icon>
+                Permissões
+              </div>
+              <div class="card-body">
+                <div class="form-row">
+                  <div class="col-6">
+                    <div class="form-group input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <fa-icon [icon]="faLock"></fa-icon>
+                        </span>
+                      </div>
+                      <select ngModel name="ativo" class="selectpicker col select">
+                        <option value="1" selected>Permissão 1</option>
+                        <option value="0">Permissão 2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <button (click)="onAdicionar()" class="btn btn-primary btn-block">
+                        <fa-icon [icon]="faPlus"></fa-icon>
+                        <span>
+                          Adicionar
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class=form-row>
+                  <div class="col-12">
+                    <div class="table-responsive">
+                      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                          <tr>
+                            <th>Permissão</th>
+                            <th> Ações</th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Admin</td>
+                            <td class="text-center">
+                              <a class='btn btn-info btn-xs mx-2' href="#">
+                                <fa-icon [icon]="faEdit"></fa-icon>
+                              </a>
+                              <a href="#" class="btn btn-danger btn-xs mx-2">
+                                <fa-icon [icon]="faTrash"></fa-icon>
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-12">
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    <fa-icon [icon]="faSave"></fa-icon>
+                    <span>
+                      Salvar
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
